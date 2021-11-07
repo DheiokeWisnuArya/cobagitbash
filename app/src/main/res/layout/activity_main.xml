@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
+
+    <ImageView
+        android:id="@+id/gambartamcargo"
+        android:src="@drawable/tamcargo"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="100dp"/>
+    <TextView
+        android:id="@+id/tv_judulform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/gambartamcargo"
+        android:text="Form Registrasi Driver PT.Tam Cargo"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_judulform"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="19"
+        android:textColor="@color/black"
+        android:hint="Nama Lengkap"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nama"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:ems="19"
+        android:hint="Alamat Lengkap"
+        android:inputType="text"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/et_nohp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_alamat"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:ems="19"
+        android:hint="No Handphone" />
+
+    <TextView
+        android:id="@+id/tv_kelamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_nohp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Jenis Kelamin"
+        android:textColor="@color/black"
+        android:textSize="19dp" />
+    <RadioGroup
+        android:id="@+id/radiogrub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_kelamin">
+    <RadioButton
+        android:id="@+id/rb_laki"
+        android:text="Laki Laki"
+        android:textSize="18dp"
+        android:buttonTint="@color/black"
+        android:onClick="onRadioButtonClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/rb_perempuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:buttonTint="@color/black"
+            android:onClick="onRadioButtonClicked"
+            android:text="Perempuan"
+            android:textSize="18dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_kendaraan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radiogrub"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Kendaraan Yang Ingin Dibawa"
+        android:textColor="@color/black"
+        android:textSize="19dp" />
+
+    <CheckBox
+        android:id="@+id/cb_canter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_kendaraan"
+        android:onClick="onCheckBoxClicked"
+        android:layout_centerHorizontal="true"
+        android:text="Mitsubishi Canter"
+        android:textSize="18dp" />
+
+    <CheckBox
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cb_isuzu"
+        android:textSize="18dp"
+        android:text="Isuzu NMR"
+        android:onClick="onCheckBoxClicked"
+        android:layout_below="@id/cb_canter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cb_hino"
+        android:textSize="18dp"
+        android:text="Hino Ranger"
+        android:onClick="onCheckBoxClicked"
+        android:layout_below="@id/cb_isuzu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cb_quester"
+        android:textSize="18dp"
+        android:text="UD Quester"
+        android:onClick="onCheckBoxClicked"
+        android:layout_below="@id/cb_hino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/llbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cb_hino"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:textSize="20dp"
+            android:id="@+id/btnsubmit"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            />
+
+        <Button
+            android:textSize="20dp"
+            android:id="@+id/btnreset"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"/>
+
+    </LinearLayout>
+</RelativeLayout>
+
+
+
+
